@@ -59,10 +59,12 @@ export const useSalaries = () => {
     return Object.keys(yearMap).map((year) => ({
       year: parseInt(year, 10),
       total_jobs: yearMap[parseInt(year, 10)].total_jobs,
-      avg_salary_usd: (
-        yearMap[parseInt(year, 10)].total_salary /
-        yearMap[parseInt(year, 10)].total_jobs
-      ).toFixed(2), // Format the salary to 2 decimal places
+      avg_salary_usd: Number(
+        (
+          yearMap[parseInt(year, 10)].total_salary /
+          yearMap[parseInt(year, 10)].total_jobs
+        ).toFixed(2)
+      ), // Ensure avg_salary_usd is a number
     }));
   };
 
