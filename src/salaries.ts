@@ -18,7 +18,7 @@ export interface SalariesData {
 export interface AggregatedDataByYear {
   year: number;
   total_jobs: number;
-  avg_salary_usd: string; // string since it's formatted with `toFixed()`
+  avg_salary_usd: number; // string since it's formatted with `toFixed()`
 }
 
 // Define the type for aggregated job titles
